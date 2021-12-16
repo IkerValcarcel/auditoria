@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnlazadIN</title> <!-- Título que se muestra en la pestaña del navegador. -->
+    <link rel="shortcut icon" href="img/briefcase.png" type="image/x-icon"> <!-- Selecciona el ícono que aparece en la pestaña del navegador. -->
+    <link rel="stylesheet" href="css/login.css"> <!-- Referencia al fichero css que da estilo a la página. -->
+</head>
+<body>
+    <div id="main_container"> <!-- División para cambiar su estilo en css. -->
+        <header> <!-- Parte superior de la página. -->
+            <div id="menu"> <!-- División para cambiar su estilo en css. -->
+                <ul> <!-- Etiqueta que crea una lista -->
+                    <li id="logo">
+                        <a href="index.html">
+                            <img src="img/briefcase.png" width="50"> <!-- Logo de  la página. -->
+                        </a>
+                    </li>
+                    <li id="nombre-pagina">
+                        <h1>EnlazadIN</h1>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <form name="login"> <!-- Formulario con los campos que se mandarán para iniciar sesión en la página web. -->
+                <h1>Inicio de sesión</h1> 
+                Email: <input type="text" name="email"><br> <!-- Campo email -->
+                Introducir contraseña: <input type="password" name="password"><br> <!-- Campo contraseña -->
+                <input type="button" onclick = "return redireccion()" value="Enviar"><br> <!-- Boton para enviar la información que ejecuta un script que comprueba si los datos se han introducido correctamente. -->
+            </form>
+        </main>
+        <div id="imagen"> <!-- Imagen en el inicio de sesión. -->
+            <img src="img/undraw_Login_re_4vu2.svg">
+        </div>
+        <footer> <!-- Pie de página dando credito al creador del logo. -->
+            Icons made by <a href="" title="juicy_fish">juicy_fish</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </footer>
+    </div>
+    <script src="js/login.js"></script> <!-- Esta etiqueta hace referencia al script que valida los datos del formulario antes de mandarlos. -->
+</body>
+</html>

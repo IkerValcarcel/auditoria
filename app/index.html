@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnlazadIN</title> <!-- Título que se muestra en la pestaña del navegador. -->
+    <link rel="shortcut icon" href="img/briefcase.png" type="image/x-icon"> <!-- Selecciona el ícono que aparece en la pestaña del navegador. -->
+    <link rel="stylesheet" href="css/main.css"> <!-- Referencia al fichero css que da estilo a la página. -->
+</head>
+<body>
+    <div id="main_container"> <!-- División para cambiar su estilo en css. -->
+        <header> <!-- Parte superior de la página. -->
+            <div id="menu"> <!-- División para cambiar su estilo en css. -->
+                <ul> <!-- Etiqueta que crea una lista -->
+                    <li id="logo"> 
+                        <img src="img/briefcase.png" width="50"> <!-- Logo de  la página. -->
+                    </li>
+                    <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+                    <li><a href="login.html">Iniciar sesión</a></li>
+                    <li><a href="registro.html">Registrarse</a></li> <!-- Links a distintas opciones de la página. -->
+                    <li><a href="foro.php">Foro</a></li> <!-- Mensajes subidos al sistema  -->
+                </ul>
+            </div>
+        <main> <!-- Parte central de la página. -->
+            <div class="text">
+                <h1>EnlazadIN</h1>
+                <p>
+                    Quejate de tus compañeros de trabajo a sus espaldas.
+                </p>
+                <p>
+                    <form action="registro.html"> 
+                        <button onclick="login.html">Empezar</button> <!-- Botón que te lleva al login. -->
+                    </form>
+                </p>
+            </div>
+
+            <div class="image">
+                <img src="img/undraw_Emails_re_cqen.svg" width="500"> <!-- Imagen que se muestra en la mitad derecha de la página -->
+            </div>
+        </main>
+        </header>
+        <div id="sobre-nosotros"> <!-- Parte con un poco de información de que hace la web. Se puede acceder a ella también clicando en el link de sobre nosotros -->
+            <div id="texto">
+                <p>
+                    Esta pagina web esta orientada al uso empresarial. Su objetivo es enviar comentarios o quejas de forma anonima a algún compañero de trabajo. 
+                </p>
+                <p>
+                    Tras iniciar sesión podras redactar un mensaje que nosotros enviaremos por ti. El receptor solo podrá leer el mensaje y no podrá identificar quien es el emisor real. 
+                </p>
+            </div>
+            <img src="img/spy.png">
+        </div>
+        <footer> <!-- Pie de página dando credito al creador del logo. -->
+            Icons made by <a href="" title="juicy_fish">juicy_fish</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnlazadIN</title> <!-- Título que se muestra en la pestaña del navegador. -->
+    <link rel="shortcut icon" href="img/briefcase.png" type="image/x-icon"> <!-- Selecciona el ícono que aparece en la pestaña del navegador. -->
+    <link rel="stylesheet" href="css/registro.css"> <!-- Referencia al fichero css que da estilo a la página. -->
+</head>
+<body>
+    <div id="main_container"> <!-- División para cambiar su estilo en css. -->
+        <header> <!-- Parte superior de la página. -->
+            <div id="menu"> <!-- División para cambiar su estilo en css. -->
+                <ul> <!-- Etiqueta que crea una lista -->
+                    <li id="logo">
+                        <a href="index.html">
+                            <img src="img/briefcase.png" width="50"> <!-- Logo de  la página. -->
+                        </a>
+                    </li>
+                    <li id="nombre-pagina">
+                        <h1>EnlazadIN</h1>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <form name="registrarse" > <!-- Formulario con los campos que se mandarán para registrarte en la página web. -->
+                <h1>Registrarse</h1>
+                    Nombre: <input type="text" name="nombre" ><br> <!-- Campo nombre. -->
+                    Apellidos: <input type="text" name="apellidos" ><br><!-- Campo apellidos. -->
+                    Email: <input type="text" name="email" ><br> <!-- Campo email. -->
+                    DNI: <input type="text" name="dni" ><br> <!-- Campo dni. -->
+                    Teléfono: <input type="text" name="telefono" ><br> <!-- Campo teléfono. -->
+                    Fecha de nacimiento: <input type="text" name="nacimiento" ><br> <!-- Campo fecha de nacimiento -->
+                    Introducir contraseña: <input type="password" name="password" ><br> <!-- Campo contraseña -->
+                <button type="button" onclick = "return redireccion()" value="Enviar">Registrarse</button> <br> <!-- Boton para enviar la información que ejecuta un script que comprueba si los datos se han introducido correctamente. -->
+            </form>
+        </main>
+        <div id="imagen"> <!-- Imagen en el registro. -->
+            <img src="img/undraw_authentication_fsn5.svg">
+        </div>
+        <footer> <!-- Pie de página dando credito al creador del logo. -->
+            Icons made by <a href="" title="juicy_fish">juicy_fish</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </footer>
+    </div>
+    <script src="js/registro.js"></script> <!-- Esta etiqueta hace referencia al script que valida los datos del formulario antes de mandarlos. -->
+</body>
+</html>
