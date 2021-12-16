@@ -4,7 +4,12 @@
 
 
   $emailF= $_GET["email"];   # obtengo la email que se ha  mandado en el js
-  $passF= $_GET["password"]; # obtengo la contraseñna que se ha mandado en el js
+  $passF= $_GET["password"]; # obtengo la contraseña que se ha mandado en el js
+  $DateAndTime = date('m-d-Y h:i:s a', time()); # se obtiene la fecha y hora actual para registrar el acceso
+
+  $file = 'logs.txt';
+  $acceso = "$emailF    $DateAndTime \n";
+  file_put_contents($file, $acceso, FILE_APPEND | LOCK_EX); # se registra el intento de acceso.
 
   $sql = "SELECT Contrasena FROM usuarios WHERE Email=?; "; # Guardo la consulta en la variable sql  
   $test= $conn->prepare($sql); # preparo la consulta 
