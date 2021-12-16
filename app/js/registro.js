@@ -7,22 +7,23 @@ function comprobar_datos(){
     var nacimiento = document.registrarse.nacimiento.value;
     var password = document.registrarse.password.value;
     var regex_nombre = /^[A-Za-z\s]+$/;
+    var regex_password = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     console.log("Enviando formulario...");
-
+   
     if (nombre === null || nombre === ''){
         alert("Introduzca su nombre");
         return false;
     }
     else if (!regex_nombre.test(nombre)){
-        alert("Solo se pueden introducir letras")
+        alert("Solo se pueden introducir letras en el nombre. No ñ ni tilde.")
         return false;
     }
     if (apellidos === null || apellidos === ''){
         alert("Introduzca sus apellidos");
         return false;
     }
-    else if (!regex_nombre.test(apellidos)){
-        alert("Solo se pueden introducir letras")
+    if (!regex_nombre.test(apellidos)){
+        alert("Solo se pueden introducir letras en el apellido. No ñ ni tilde.")
         return false;
     }
     if (!validar_email(email)){
@@ -40,6 +41,10 @@ function comprobar_datos(){
     }
     if (password === null || password === ''){
         alert('Introduzca su contrase\361a');
+        return false;
+    }
+    if (!regex_password.test(password)){
+        alert('Introduzca una contrase\361a de entre 8 y 16 caracteres que incluya almenos una minuscula, una mayuscula, un n\372mero y alguno de estos caracteres: !@#$%^&*');
         return false;
     }
     return true;
@@ -97,7 +102,6 @@ function validar_fecha(fecha){
 
 function redireccion(){
     if (comprobar_datos()){
-  
         nuevapag=window.location.href.replace("html","php");
         nuevapag=`${nuevapag}?nombre=${document.registrarse.nombre.value}&apellidos=${document.registrarse.apellidos.value}&email=${document.registrarse.email.value}&dni=${document.registrarse.dni.value}&telefono=${document.registrarse.telefono.value}&nacimiento=${document.registrarse.nacimiento.value}&password=${document.registrarse.password.value}`
 
