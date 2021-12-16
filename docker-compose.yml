@@ -1,5 +1,5 @@
-web:
-   image: web
+auditoria:
+   image: auditoria
    environment:
      - ALLOW_OVERRIDE=true
    ports:

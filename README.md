@@ -1,27 +1,25 @@
 # EnlazadIN
 ## Que es
-EnlazadIN es una pagina en la que puedes hacer criticas a tus compañeros de trbajao/jefes de forma anonima.
+EnlazadIN es una pagina en la que puedes hacer criticas a tus compañeros de trabajo/jefes de forma anonima.
 Solamente se podran realizar criticas constructivas, el uso de la pagina para enviar insultos y ofensas no esta permitido.
 ## Pasos para poner en marcha el sistema:
-### 1 
-Descargarse el archivo "EnlazadIN.zip" y descomprimirlo 
 
-### 2
-Descargarse el archivo "EnlazadIN.zip" y descomprimir dicho archivo en /home en una carpeta que se llama EnlazadIN
+### 1
+Descargarse el archivo "auditoria.zip" y descomprimir dicho archivo en /home en una carpeta que se llama auditoria
 
-### 3 
+### 2 
 Abrir la terminal en la carpeta previamente creada y ejecutar los siguientes comandos;
 
 1- Se genera el contenedor docker:
 ```bash
-$ sudo docker build -t="web" .
+sudo docker build -t="auditoria" .
 ```
 2- Se pone en marcha dicho contenedor con el comando 
 ```bash
-$ sudo docker-compose up
+sudo docker-compose up
 ```
-
-3- Se abre el buscador mozilla firefox y se introduce la siguiente url
+3- Se abre el buscador mozilla firefox y se introduce la siguiente url:
+[EnlazadIN](localhost:81/index.html)
 ### Para parar el contenedor 
 Abrir la terminal en la carpeta de la aplicacion web
 ```bash
