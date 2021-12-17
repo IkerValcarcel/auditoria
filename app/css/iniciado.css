@@ -23,7 +23,7 @@ header #menu ul li{
     vertical-align: middle;
 }
 #Botones{
-    margin-top: 6%;
+    margin-top: 3%;
     width: 50%;
     
 }
@@ -37,12 +37,7 @@ button{
     font-size: 24px;
     padding: 20px 25px;
     margin-left: 30%;
-}
-#modificar-datos{
-    margin-top: 0%;
-}
-#crear-mensaje{
-    margin-top: 30%;
+    margin-top: 100px;
 }
 button:hover{
     background-color:thistle;
