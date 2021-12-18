@@ -6,7 +6,7 @@ CREATE TABLE usuarios (
   DNI varchar(10) UNIQUE,
   Telefono int(9) UNIQUE,
   Fecha_nacimiento varchar(10) NOT NULL,
-  Contrasena varchar(20) NOT NULL
+  Contrasena varchar(255) NOT NULL
 
 );
 

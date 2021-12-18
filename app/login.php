@@ -8,7 +8,7 @@
   $DateAndTime = date('m-d-Y h:i:s a', time()); # se obtiene la fecha y hora actual para registrar el acceso
 
   $file = 'logs.txt';
-  $acceso = "$emailF    $DateAndTime \n";
+  $acceso = "$emailF    $DateAndTime";
   file_put_contents($file, $acceso, FILE_APPEND | LOCK_EX); # se registra el intento de acceso.
 
   $sql = "SELECT Contrasena FROM usuarios WHERE Email=?; "; # Guardo la consulta en la variable sql  
@@ -19,11 +19,14 @@
     $result = $test->get_result(); # consigo los resultados 
     $contrasena = $result->fetch_assoc(); # guarda los resultados     ¯\_(ツ)_/¯
 
-    if ( strcmp($contrasena['Contrasena'],$passF) ==0 ){ # comparo la contraseña introducida con la almacenada en la base de datos 
+    if (password_verify($passF,$contrasena['Contrasena'])){ # comparo la contraseña introducida con el hash almacenado en la base de datos 
       $_SESSION['email']  = $emailF; # guardo la variabe email en la varibale global de sesion para utilizarla mas tarde 
       $_SESSION['time'] = time();
+      file_put_contents($file, "    acceso exitoso.\n", FILE_APPEND | LOCK_EX);
       echo '<script> window.location.href="/iniciado.html"</script>';# redirecciono la pagina a la que esta logueado
     }else{
+      file_put_contents($file, "    acceso fallido.\n", FILE_APPEND | LOCK_EX);
+      echo "<script>alert('El usuario o la contraseña no son correctos.')</script>";
       echo '<script> window.location.href="/login.html"</script>'; # Se redirecciona al login ya que no es un usuario valido
     } 
   }else{
