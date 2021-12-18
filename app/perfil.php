@@ -1,6 +1,13 @@
 <?php
     require("db_con.php");  # se conecta con la base de datos 
     session_start();
+    $tiempo_acceso = $_SESSION['time'];
+    $tiempo_transcurrido = time() - $tiempo_acceso;
+    if ($tiempo_transcurrido > 60){
+        header('Location: cerrarsesion.php');
+    }
+    $_SESSION['time'] = time();
+
     $email= $_SESSION['email']; # se guarda en la variable local email la variable global en la que hemos almacenado el email
 
     $sql = "SELECT * FROM usuarios WHERE Email=?"; # consulta sql
@@ -62,7 +69,7 @@
                     Introducir contraseña: <input type='text' name='password' value={$Contrasena}><br>
                     <input type='submit' name='Cambiardatos' class='button' value='Cambiar Datos' />
                 </form>
-                <form action='iniciado.html'>
+                <form action='btn_volver_tiempo_sesion.php'>
                     <button id='volver' class='button'>Volver</button> <!-- Botón que vuelve atras. -->
                 </form>
             </main>
@@ -107,4 +114,5 @@
             printf ("Error updating record: " . $conn->error); # algo ha salido mal y se imprime en la terminal del buscador 
           }
         }
+    
 ?>

@@ -22,6 +22,7 @@ else{
     printf("Error inesperado al añadir usuario: %s<br />", $mysqli->error);  # se indica por la terminal del buscador que ha salido mal  
 }
 $_SESSION['email'] = $email; # se guarda en la variable global el email; esto es para evitar tener que iniciar sesion despues de modificar el email
+$_SESSION['tiempo'] = time();
 echo '<script> window.location.href="/iniciado.html"</script>'; # redireccioona al inicio del perfil
 
 ?>

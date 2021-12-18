@@ -21,6 +21,7 @@
 
     if ( strcmp($contrasena['Contrasena'],$passF) ==0 ){ # comparo la contraseña introducida con la almacenada en la base de datos 
       $_SESSION['email']  = $emailF; # guardo la variabe email en la varibale global de sesion para utilizarla mas tarde 
+      $_SESSION['time'] = time();
       echo '<script> window.location.href="/iniciado.html"</script>';# redirecciono la pagina a la que esta logueado
     }else{
       echo '<script> window.location.href="/login.html"</script>'; # Se redirecciona al login ya que no es un usuario valido
