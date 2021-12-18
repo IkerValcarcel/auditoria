@@ -1,6 +1,6 @@
 <?php
-    require("db_con.php"); # se conecta con la base de dato s
-   
+    require("db_con.php"); # se conecta con la base de datos
+    session_start();
     $nombre = $_GET["nombre"]; # se guardan los enviados desde el archivo js 
     $apellidos = $_GET["apellidos"]; 
     $email = $_GET["email"]; 
@@ -17,15 +17,14 @@
     
     if ($mysqli->query($sql)) { # ejecuta la consulta sql 
         printf("Se ha añadido correctamente.<br />");  # se indica por la terminal del buscador que ha salido bien 
-        
     } 
     else{
-        echo "<script>alert('Error inesperado al añadir usuario. Puede que alguno de los datos únicos este ya esten registrados.')</script>";
+        session_start();# inicia una sesion en php para tener acceso a la variable global email 
         printf("Error inesperado al añadir usuario: %s<br />", $mysqli->error);  # se indica por la terminal del buscador que ha salido mal  
+        echo "<script>alert('Error inesperado al añadir usuario. Puede que alguno de los datos únicos este ya esten registrados.')</script>";
         echo '<script> window.location.href="registro.html"</script>'; # redireccioona al inicio del perfil
     }
-    session_start();# inicia una sesion en php para tener acceso a la variable global email 
-    $_SESSION['email'] = $email; # se guarda en la variable global el email; esto es para evitar tener que iniciar sesion despues de modificar el email
-    $_SESSION['tiempo'] = time();
-    echo '<script> window.location.href="iniciado.html"</script>'; # redireccioona al inicio del perfil
+    $_SESSION["email"] = $email; # se guarda en la variable global el email; esto es para evitar tener que iniciar sesion despues de modificar el email
+    $_SESSION["time"] = time();
+    echo '<script> window.location.href="/iniciado.html"</script>'; # redireccioona al inicio del perfil
 ?>

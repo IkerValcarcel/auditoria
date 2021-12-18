@@ -58,7 +58,7 @@
         </header>
         <body>
             <main>
-                <form name='datos' method='post'>
+                <form name='registrarse'>
                     <h1>Cambio de datos</h1>
                     Nombre: <input type='text' name='nombre' value={$Nombre}><br>
                     Apellidos: <input type='text' name='apellidos' value={$Apellidos}><br>
@@ -66,8 +66,8 @@
                     DNI: <input type='text' name='dni' value={$DNI}><br>
                     Teléfono: <input type='text' name='telefono' value={$Telefono}><br>
                     Fecha de nacimiento: <input type='text' name='nacimiento' value={$Fecha_nacimiento}><br>
-                    Introducir contraseña: <input type='text' name='password' value={$Contrasena}><br>
-                    <input type='submit' name='Cambiardatos' class='button' value='Cambiar Datos' />
+                    Introducir contraseña: <input type='password' name='password'><br>
+                    <button type='button' class='button' onclick = 'return modificar_datos()' value='Modificar Datos'>Modificar Datos</button> <br>
                 </form>
                 <form action='btn_volver_tiempo_sesion.php'>
                     <button id='volver' class='button'>Volver</button> <!-- Botón que vuelve atras. -->
@@ -79,40 +79,7 @@
             <footer>
                 Icons made by <a href='' title='juicy_fish'>juicy_fish</a> from <a href='https://www.flaticon.com/' title='Flaticon'>www.flaticon.com</a>
             </footer>
+            <script src='js/registro.js'></script> <!-- Esta etiqueta hace referencia al script que valida los datos del formulario antes de mandarlos. -->
         </body>
     </html>";
-    
-    if(array_key_exists('Cambiardatos', $_POST)) { # detecta el momento en que el boton se pulsa
-        
-        $nom=$_POST['nombre']; # se guardan los valores del formulario en las variables lcoales a traves de un metodo post 
-        $ape=$_POST['apellidos'];
-        $mail=$_POST['email'];
-        $dni=$_POST['dni'];
-        $telf=$_POST['telefono'];
-        
-        $fnac=$_POST['nacimiento'];
-        list($dia,$mes,$ano) = explode("-", $fnac);
-        $fnac= $ano."/".$mes."/".$dia;
-        
-        $pasw=$_POST['password'];
-# consulta sql 
-
-        $sql = "UPDATE usuarios SET Nombre = '$nom',
-                                    Apellidos = '$ape',
-                                    Email = '$mail',
-                                    DNI = '$dni',
-                                    Telefono = '$telf',
-                                    Fecha_nacimiento = '$fnac',
-                                    Contrasena = '$pasw'
-                                                        WHERE Email LIKE '$email';";
-
-        if (mysqli_query($conn, $sql)) {# se ejecuta la consulta sql 
-            printf ("Record updated successfully");# imprime en la terminal del buscador que ha salido bien 
-            $_SESSION['email'] = $mail;  # guarda en la variable glogal el email para mantener la sesion inicada 
-            echo '<script> window.location.href="/perfil.php"</script>'; # redirecciona al perfiñ
-        }else {
-            printf ("Error updating record: " . $conn->error); # algo ha salido mal y se imprime en la terminal del buscador 
-          }
-        }
-    
 ?>

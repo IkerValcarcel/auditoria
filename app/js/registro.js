@@ -110,3 +110,13 @@ function redireccion(){
     }
    
 }
+function modificar_datos(){
+    if (comprobar_datos()){
+        
+        nuevapag="modificarperfil.php";
+        nuevapag=`${nuevapag}?nombre=${document.registrarse.nombre.value}&apellidos=${document.registrarse.apellidos.value}&email=${document.registrarse.email.value}&dni=${document.registrarse.dni.value}&telefono=${document.registrarse.telefono.value}&nacimiento=${document.registrarse.nacimiento.value}&password=${document.registrarse.password.value}`
+
+        window.location = nuevapag;
+
+    }
+}
