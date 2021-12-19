@@ -69,7 +69,7 @@ function redireccion(){
     if (comprobar_datos()){
   
         nuevapag=window.location.href.replace("html","php");
-        nuevapag=`${nuevapag}nombre=${document.mensaje.nombre.value}&apellidos=${document.mensaje.apellidos.value}&email=${document.mensaje.email.value}&telefono=${document.mensaje.telefono.value}&mensaje=${document.mensaje.mensaje.value}`
+        nuevapag=`${nuevapag}?nombre=${document.mensaje.nombre.value}&apellidos=${document.mensaje.apellidos.value}&email=${document.mensaje.email.value}&telefono=${document.mensaje.telefono.value}&mensaje=${document.mensaje.mensaje.value}`
 
         window.location = nuevapag;
 

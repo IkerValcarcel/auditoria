@@ -29,5 +29,5 @@ INSERT INTO `comentarios` (`ID`, `NRECEP`, `ARECEP`, `ERECEP`, `Telefono`, `MSG`
 
 
 INSERT INTO `usuarios` (`Nombre`, `Apellidos`, `Email`, `DNI`, `Telefono`, `Fecha_nacimiento`, `Cuenta_Bancaria`, `Contrasena`) VALUES
-('admin', 'admin', 'admin@ehu.eus', '05031281-P', 605031281, '1990/02/01', 'UVR2eUF0bzl5RHFXc2YvQzJRaHNNeUVqT2VxejVydFZXc2pWQzBFTjl4Yz06OtIv75gg16n/sRMbdszc4cQ=', '$2y$10$JTVkONw1.lO8.OZUUjMfSuJVjcXIu3lKyHd5T957UpyVgnC.xWLHC'),
+('admin', 'admin', 'admin@ehu.eus', '05031281-P', 605031281, '1990/02/01', 'UVR2eUF0bzl5RHFXc2YvQzJRaHNNeUVqT2VxejVydFZXc2pWQzBFTjl4Yz06OtIv75gg16n/sRMbdszc4cQ=', '$2y$10$lJL13/Bbuddepu9oys6wIOhm7AEf0u2IpdOMeN78rk/ixmZmwZUJe'),
 ('Endika', 'Eiros', 'endika.eiros@gmail.com', '79008225-M', 671024023, '2000/03/06', 'TW1tOFFwdEg5cjZvcGMyWDZsd2o4Vkd0UEh5YWUrUnYyTDFMZnZuMFQ4ND06OiXzisSM+yPXTTMtAlHmdSY=', '$2y$10$lJL13/Bbuddepu9oys6wIOhm7AEf0u2IpdOMeN78rk/ixmZmwZUJe');
