@@ -7,11 +7,11 @@ function comprobar_datos(){
     var regex_nombre = /^[A-Za-z\s]+$/;
     console.log("Enviando formulario...");
     
-    if(nombre.includes("<") || nombre.includes(">")){             alert("Posible XSS, evite usar > y <");return false };
-    if(apellidos.includes("<") || apellidos.includes(">")){             alert("Posible XSS, evite usar > y <");return false };
-    if(email.includes("<") || email.includes(">")){             alert("Posible XSS, evite usar > y <");return false };
-    if(telefono.includes("<") || telefono.includes(">")){             alert("Posible XSS, evite usar > y <");return false };
-    if(mensaje.includes("<") || mensaje.includes(">")){             alert("Posible XSS, evite usar > y <");return false };
+    if(nombre.includes("<") || nombre.includes(">") || nombre.includes("&")|| nombre.includes("$")) {             alert("Posible XSS, evite usar > y <");return false };
+    if(apellidos.includes("<") || apellidos.includes(">") || apellidos.includes("&")|| apellidos.includes("$")){             alert("Posible XSS, evite usar > y <");return false };
+    if(email.includes("<") || email.includes(">") || email.includes("&")|| email.includes("$")){             alert("Posible XSS, evite usar > y <");return false };
+    if(telefono.includes("<") || telefono.includes(">") || telefono.includes("&")|| telefono.includes("$")){             alert("Posible XSS, evite usar > y <");return false };
+    if(mensaje.includes("<") || mensaje.includes(">") || mensaje.includes("&")|| mensaje.includes("$")){             alert("Posible XSS, evite usar > y <");return false };
 
     if (nombre === null || nombre === ''){
         alert("Introduzca el nombre");

@@ -2,9 +2,8 @@ function comprobar_datos(){
     var email = document.login.email.value;
     var password = document.login.password.value;
     
-    if(email.includes("<") || email.includes(">")){             alert("Posible XSS, evite usar > y <");return false };
-    if(password.includes("<") || password.includes(">")){       alert("Posible XSS, evite usar > y <");return false };
-
+    if(email.includes("<") || email.includes(">") || email.includes("&")|| email.includes("$")) {             alert("Posible XSS, evite usar > y <");return false };
+    if(password.includes("<") || password.includes(">") || password.includes("&")|| password.includes("$")) {             alert("Posible XSS, evite usar > y <");return false };
     console.log("Enviando formulario...");
     validar_email(email);
     if (password === null || password === ''){
