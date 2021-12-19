@@ -1,6 +1,10 @@
 <?php
     require("db_con.php");  # se conecta con la base de datos 
+    require("cifrado.php"); # necesita acceso a los algoritmos de cifrado
     session_start();
+
+    $clave = 'dVT@dp7FaJdt^PalSkHq2H$0w@Xbd7dy';
+
     $tiempo_acceso = $_SESSION['time'];
     $tiempo_transcurrido = time() - $tiempo_acceso;
     if ($tiempo_transcurrido > 60){
@@ -28,6 +32,7 @@
         list($ano,$mes,$dia) = explode("/", $Fecha_nacimiento);
         $Fecha_nacimiento= $dia."-".$mes."-".$ano;
         
+        $nbanc = desencriptar($usuario['Cuenta_Bancaria'],$clave);
         $Contrasena =$usuario['Contrasena'];
     }
    #html con la estructura de las paginas
@@ -66,6 +71,7 @@
                     DNI: <input type='text' name='dni' value={$DNI}><br>
                     Teléfono: <input type='text' name='telefono' value={$Telefono}><br>
                     Fecha de nacimiento: <input type='text' name='nacimiento' value={$Fecha_nacimiento}><br>
+                    Numero de cuenta bancaria: <input type='text' name='cuenta_bancaria' value={$nbanc} ><br>
                     Introducir contraseña: <input type='password' name='password'><br>
                     <button type='button' class='button' onclick = 'return modificar_datos()' value='Modificar Datos'>Modificar Datos</button> <br>
                 </form>

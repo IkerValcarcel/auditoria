@@ -1,12 +1,17 @@
 <?php
     require("db_con.php"); # se conecta con la base de datos
+    require("cifrado.php"); # necesita acceso a los algoritmos de cifrado
+
+    $clave = 'dVT@dp7FaJdt^PalSkHq2H$0w@Xbd7dy';
+
     session_start();
     $nom=$_GET["nombre"]; # se guardan los valores del formulario en las variables lcoales a traves de un metodo post 
     $ape=$_GET["apellidos"];
     $mail=$_GET["email"]; 
     $dni=$_GET["dni"]; 
     $telf=(int)$_GET["telefono"]; 
-    
+    $nbanc = cifrar($_GET["cuenta_bancaria"],$clave);
+
     $fnac=$_GET["nacimiento"]; 
     list($dia,$mes,$ano) = explode("-", $fnac);
     $fnac= $ano."/".$mes."/".$dia;
@@ -20,6 +25,7 @@
                                 DNI = '$dni',
                                 Telefono = '$telf',
                                 Fecha_nacimiento = '$fnac',
+                                Cuenta_Bancaria = '$nbanc',
                                 Contrasena = '$pasw'
                                 WHERE Email LIKE '$mail';";
 

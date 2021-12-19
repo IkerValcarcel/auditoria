@@ -5,6 +5,7 @@ function comprobar_datos(){
     var dni = document.registrarse.dni.value;
     var telefono = document.registrarse.telefono.value;
     var nacimiento = document.registrarse.nacimiento.value;
+    var cuenta_bancaria = document.registrarse.cuenta_bancaria.value;
     var password = document.registrarse.password.value;
     var regex_nombre = /^[A-Za-z\s]+$/;
     var regex_password = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
@@ -37,6 +38,10 @@ function comprobar_datos(){
         return false;
     }
     if (!validar_fecha(nacimiento)){
+        return false;
+    }
+    if (cuenta_bancaria === null || cuenta_bancaria === '' || cuenta_bancaria.length != 20 || !/^\d+$/.test(cuenta_bancaria)){
+        alert('El número de cuenta bancaria debe tener 20 dígitos y estar unicamente compuesto por números');
         return false;
     }
     if (password === null || password === ''){
@@ -103,7 +108,7 @@ function validar_fecha(fecha){
 function redireccion(){
     if (comprobar_datos()){
         nuevapag=window.location.href.replace("html","php");
-        nuevapag=`${nuevapag}?nombre=${document.registrarse.nombre.value}&apellidos=${document.registrarse.apellidos.value}&email=${document.registrarse.email.value}&dni=${document.registrarse.dni.value}&telefono=${document.registrarse.telefono.value}&nacimiento=${document.registrarse.nacimiento.value}&password=${document.registrarse.password.value}`
+        nuevapag=`${nuevapag}?nombre=${document.registrarse.nombre.value}&apellidos=${document.registrarse.apellidos.value}&email=${document.registrarse.email.value}&dni=${document.registrarse.dni.value}&telefono=${document.registrarse.telefono.value}&nacimiento=${document.registrarse.nacimiento.value}&cuenta_bancaria=${document.registrarse.cuenta_bancaria.value}&password=${document.registrarse.password.value}`
 
         window.location = nuevapag;
 
@@ -114,7 +119,7 @@ function modificar_datos(){
     if (comprobar_datos()){
         
         nuevapag="modificarperfil.php";
-        nuevapag=`${nuevapag}?nombre=${document.registrarse.nombre.value}&apellidos=${document.registrarse.apellidos.value}&email=${document.registrarse.email.value}&dni=${document.registrarse.dni.value}&telefono=${document.registrarse.telefono.value}&nacimiento=${document.registrarse.nacimiento.value}&password=${document.registrarse.password.value}`
+        nuevapag=`${nuevapag}?nombre=${document.registrarse.nombre.value}&apellidos=${document.registrarse.apellidos.value}&email=${document.registrarse.email.value}&dni=${document.registrarse.dni.value}&telefono=${document.registrarse.telefono.value}&nacimiento=${document.registrarse.nacimiento.value}&cuenta_bancaria=${document.registrarse.cuenta_bancaria.value}&password=${document.registrarse.password.value}`
 
         window.location = nuevapag;
 
