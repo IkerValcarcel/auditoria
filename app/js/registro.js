@@ -8,8 +8,17 @@ function comprobar_datos(){
     var password = document.registrarse.password.value;
     var regex_nombre = /^[A-Za-z\s]+$/;
     var regex_password = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    var regex_xss= /<>/;
     console.log("Enviando formulario...");
-   
+    
+    if(!regex_xss.test(nombre)){     alert("Detectado XSS");return false };
+    if(!regex_xss.test(apellidos)){  alert("Detectado XSS");return false };
+    if(!regex_xss.test(email)){      alert("Detectado XSS");return false };
+    if(!regex_xss.test(dni)){        alert("Detectado XSS");return false };
+    if(!regex_xss.test(telefono)){   alert("Detectado XSS");return false };
+    if(!regex_xss.test(nacimiento)){ alert("Detectado XSS");return false };
+    if(!regex_xss.test(password)){   alert("Detectado XSS");return false };
+
     if (nombre === null || nombre === ''){
         alert("Introduzca su nombre");
         return false;
@@ -119,4 +128,5 @@ function modificar_datos(){
         window.location = nuevapag;
 
     }
+
 }
