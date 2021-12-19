@@ -49,18 +49,12 @@ main form h1{
     font-size: 40px;
     margin: 2px 120px;
 }
-input[type="text"]{
-    padding: 7px 25px;
+input{
+    padding: 3px 25px;
     display: inline-block;
     vertical-align: middle;
     margin: 30px 0px;
     
-}
-input[type="password"]{
-    padding: 7px 25px;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 30px 0px;
 }
 button[type="button"]{
     background-color:lightsalmon;
