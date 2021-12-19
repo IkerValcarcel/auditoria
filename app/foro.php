@@ -1,11 +1,10 @@
 <?php
  session_start();
  require("db_con.php"); # se conecta con la bd
+ require("tiemposesion.php");
 
- if (!isset($_SESSION['email'])){
-    header('Location: login.html');
- }
- else{
+ if (permitir_acceso() != 0) #Si no esta iniciado o lleva mucho tiempo inactivo no se le permite acceso
+    echo '<script> window.location.href="/cerrarsesion.php"</script>';
 
  echo
  "
@@ -55,5 +54,5 @@ echo
   </body>
 </html>
 ";
-}
+
 ?>

@@ -1,16 +1,14 @@
 <?php
     require("db_con.php");  # se conecta con la base de datos 
     require("cifrado.php"); # necesita acceso a los algoritmos de cifrado
+    require("tiemposesion.php");
     session_start();
 
     $clave = 'dVT@dp7FaJdt^PalSkHq2H$0w@Xbd7dy';
 
-    $tiempo_acceso = $_SESSION['time'];
-    $tiempo_transcurrido = time() - $tiempo_acceso;
-    if ($tiempo_transcurrido > 60){
-        header('Location: cerrarsesion.php');
-    }
-    $_SESSION['time'] = time();
+    if (permitir_acceso() != 0) #Si no esta iniciado o lleva mucho tiempo inactivo no se le permite acceso
+        echo '<script> window.location.href="/cerrarsesion.php"</script>';
+    
 
     $email= $_SESSION['email']; # se guarda en la variable local email la variable global en la que hemos almacenado el email
 
