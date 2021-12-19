@@ -12,14 +12,14 @@ function comprobar_datos(){
     var regex_xss= /<>/;
     console.log("Enviando formulario...");
     
-    if(!regex_xss.test(nombre)){     alert("Detectado XSS");return false };
-    if(!regex_xss.test(apellidos)){  alert("Detectado XSS");return false };
-    if(!regex_xss.test(email)){      alert("Detectado XSS");return false };
-    if(!regex_xss.test(dni)){        alert("Detectado XSS");return false };
-    if(!regex_xss.test(telefono)){   alert("Detectado XSS");return false };
-    if(!regex_xss.test(nacimiento)){ alert("Detectado XSS");return false };
-    if(!regex_xss.test(password)){   alert("Detectado XSS");return false };
-
+    if(!regex_xss.test(nombre)){     alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(apellidos)){  alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(email)){      alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(dni)){        alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(telefono)){   alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(nacimiento)){ alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(password)){   alert("Posible XSS, evite usar > y <");return false };
+Posible
     if (nombre === null || nombre === ''){
         alert("Introduzca su nombre");
         return false;

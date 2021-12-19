@@ -5,13 +5,14 @@ function comprobar_datos(){
     var telefono = document.mensaje.telefono.value;
     var mensaje = document.mensaje.mensaje.value;
     var regex_nombre = /^[A-Za-z\s]+$/;
+    var regex_xss= /<>/;
     console.log("Enviando formulario...");
 
-    if(!regex_xss.test(nombre)){     alert("Detectado XSS");return false };
-    if(!regex_xss.test(apellidos)){  alert("Detectado XSS");return false };
-    if(!regex_xss.test(email)){      alert("Detectado XSS");return false };
-    if(!regex_xss.test(telefono)){   alert("Detectado XSS");return false };
-    if(!regex_xss.test(mensaje)){   alert("Detectado XSS");return false };
+    if(!regex_xss.test(nombre)){     alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(apellidos)){  alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(email)){      alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(telefono)){   alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(mensaje)){    alert("Posible XSS, evite usar > y <");return false };
 
     if (nombre === null || nombre === ''){
         alert("Introduzca el nombre");

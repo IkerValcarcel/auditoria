@@ -1,9 +1,10 @@
 function comprobar_datos(){
     var email = document.login.email.value;
     var password = document.login.password.value;
-    
-    if(!regex_xss.test(email)){     alert("Detectado XSS");return false };
-    if(!regex_xss.test(password)){  alert("Detectado XSS");return false };
+    var regex_xss= /<>/;
+
+    if(!regex_xss.test(email)){     alert("Posible XSS, evite usar > y <");return false };
+    if(!regex_xss.test(password)){  alert("Posible XSS, evite usar > y <");return false };
     
     console.log("Enviando formulario...");
     validar_email(email);
