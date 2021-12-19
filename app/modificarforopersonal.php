@@ -32,8 +32,10 @@
             </ul>
         </header>
       <body>";
+      $email= $_SESSION['email'];
+      $foro2 = mysqli_query($conn, "SELECT * FROM comentarios WHERE EMISOR LIKE '$email';")or die (mysqli_error($conn));
 # secuencia en la que imprime 
- foreach($foro as $comentario) :
+ foreach($foro2 as $comentario) :
   $ID = $comentario['ID'];
 
   $NRECEP = $comentario['NRECEP']; 
@@ -46,6 +48,9 @@
         <div id={$ID}>
             <p>{$ERECEP}</p>
             <p>{$MSG}</p>
+
+            <button id='modificar' onclick='return redireccion({$ID})' class='button'>Modificar mensaje</button> <!-- Botón que lleva a modificar el mensaje. -->
+            <button type='button' onclick = 'return confirmar({$ID})' value='Enviar'>Borrar mensaje</button> <br>
         </div>
       ";
 endforeach;

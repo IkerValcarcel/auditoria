@@ -56,7 +56,7 @@
                     
                     <input type='submit' name='modificar' class='button' value='Modificar' />
                 </form>
-                <form action='/foro.php'>
+                <form action='/modificarforopersonal.php'>
                     <button id='volver' class='button'>Volver</button> <!-- Botón que vuelve atras. -->
                 </form>
             </main>
