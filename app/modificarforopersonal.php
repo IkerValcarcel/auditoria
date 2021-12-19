@@ -55,6 +55,9 @@
 endforeach;
 echo
 "
+    <form action='btn_volver_tiempo_sesion.php'>
+        <button id='volver' class='button'>Volver</button> <!-- Botón que vuelve atras. -->
+    </form>
       <script src='js/modificarmensaje.js'></script> <!-- Esta etiqueta hace referencia al script que valida los datos del formulario antes de mandarlos. -->
   </body>
 </html>
