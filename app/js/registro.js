@@ -12,34 +12,32 @@ function comprobar_datos(){
     
     console.log("Enviando formulario...");
 
-    if(nombre.includes("<") || nombre.includes(">") || nombre.includes("&")|| nombre.includes("$")) {
+    if(nombre.includes("<") || nombre.includes(">")) {
         alert("Posible XSS, evite usar > y <");
         return false; 
     }
-    if(apellidos.includes("<") || apellidos.includes(">") || apellidos.includes("&")|| apellidos.includes("$")) {
+    if(apellidos.includes("<") || apellidos.includes(">")) {
         alert("Posible XSS, evite usar > y <");
         return false;
     }
-    if(email.includes("<") || email.includes(">") || email.includes("&")|| email.includes("$")) {
+    if(email.includes("<") || email.includes(">")) {
         alert("Posible XSS, evite usar > y <");
         return false;
     }
-    if(telefono.includes("<") || telefono.includes(">") || telefono.includes("&")|| telefono.includes("$")) {
+    if(telefono.includes("<") || telefono.includes(">")) {
         alert("Posible XSS, evite usar > y <");
 
         return false;
     }
-    if(mensaje.includes("<") || mensaje.includes(">") || mensaje.includes("&")|| mensaje.includes("$")) {
-        alert("Posible XSS, evite usar > y <");return false;}
     if(dni.includes("<") || dni.includes(">") || dni.includes("&")|| dni.includes("$")) {
         alert("Posible XSS, evite usar > y <");
         return false;
     }
-    if(nacimiento.includes("<") || nacimiento.includes(">") || nacimiento.includes("&")|| nacimiento.includes("$")) {
+    if(nacimiento.includes("<") || nacimiento.includes(">")) {
         alert("Posible XSS, evite usar > y <");
         return false;
     }
-    if(password.includes("<") || password.includes(">") || password.includes("&")|| password.includes("$")) {
+    if(password.includes("<") || password.includes(">")) {
         alert("Posible XSS, evite usar > y <");
         return false;
     }
