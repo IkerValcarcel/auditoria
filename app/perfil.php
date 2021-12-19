@@ -70,7 +70,7 @@
                     Teléfono: <input type='text' name='telefono' value={$Telefono}><br>
                     Fecha de nacimiento: <input type='text' name='nacimiento' value={$Fecha_nacimiento}><br>
                     Numero de cuenta bancaria: <input type='text' name='cuenta_bancaria' value={$nbanc} ><br>
-                    Introducir contraseña: <input type='password' name='password'><br>
+                    Introducir Nueva contraseña: <input type='password' name='password'><br>
                     <button type='button' class='button' onclick = 'return modificar_datos()' value='Modificar Datos'>Modificar Datos</button> <br>
                 </form>
                 <form action='btn_volver_tiempo_sesion.php'>

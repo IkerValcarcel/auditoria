@@ -32,6 +32,14 @@ Para detener el container hay que presionar la tecla control izquierda y la letr
 ```bash
 $ sudo docker-compose down
 ```
+Es necesario dar permisos al log para escribir 
+```bash
+$ sudo chmod 666 logs.txt
+```
+
+Hemos creado un usuario para usarse
+USUARIO:: admin@ehu.eus
+CONTRASEÑA:: Contraseña1!
 
 ## Gracias a   
 
