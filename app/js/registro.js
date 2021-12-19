@@ -9,16 +9,19 @@ function comprobar_datos(){
     var password = document.registrarse.password.value;
     var regex_nombre = /^[A-Za-z\s]+$/;
     var regex_password = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    var regex_xss= /^<[A-Za-z\s]+>$/;
+    
     console.log("Enviando formulario...");
     
-    if(regex_xss.test(nombre)){     alert("Posible XSS, evite usar > y <");return false };
-    if(regex_xss.test(apellidos)){  alert("Posible XSS, evite usar > y <");return false };
-    if(regex_xss.test(email)){      alert("Posible XSS, evite usar > y <");return false };
-    if(regex_xss.test(dni)){        alert("Posible XSS, evite usar > y <");return false };
-    if(regex_xss.test(telefono)){   alert("Posible XSS, evite usar > y <");return false };
-    if(regex_xss.test(nacimiento)){ alert("Posible XSS, evite usar > y <");return false };
-    if(regex_xss.test(password)){   alert("Posible XSS, evite usar > y <");return false };
+    if(nombre.includes("<") || nombre.includes(">")){           alert("Posible XSS, evite usar > y <");return false };
+    if(apellidos.includes("<") || apellidos.includes(">")){     alert("Posible XSS, evite usar > y <");return false };
+    if(email.includes("<") || email.includes(">")){             alert("Posible XSS, evite usar > y <");return false };
+    if(telefono.includes("<") || telefono.includes(">")){       alert("Posible XSS, evite usar > y <");return false };
+    if(mensaje.includes("<") || mensaje.includes(">")){         alert("Posible XSS, evite usar > y <");return false };
+    if(dni.includes("<") || dni.includes(">")){                 alert("Posible XSS, evite usar > y <");return false };
+    if(nacimiento.includes("<") || nacimiento.includes(">")){   alert("Posible XSS, evite usar > y <");return false };
+    if(password.includes("<") || password.includes(">")){       alert("Posible XSS, evite usar > y <");return false };
+
+   
     
     if (nombre === null || nombre === ''){
         alert("Introduzca su nombre");
